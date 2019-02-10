@@ -10,7 +10,9 @@ class PagesController extends Controller
 {
     public function home()
     {
-        return view('pages.home');
+    	$kecamatan_list = KecamatanDesa::all()->groupBy('kecamatan');
+
+        return view('pages.home', compact('kecamatan_list'));
     }
 
     public function jamaah(Request $request) 

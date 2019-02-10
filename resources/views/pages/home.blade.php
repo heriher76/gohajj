@@ -1,5 +1,10 @@
 @extends('layouts.app')
 
+@section('style')
+<!-- Morris charts -->
+<link rel="stylesheet" href="{{ url('bower_components/morris.js/morris.css') }}">
+@endsection
+
 @section('content')
 
 <nav class="navbar navbar-default bootsnav navbar-fixed">
@@ -154,8 +159,9 @@
                 </div>
 
                 <div class="col-md-6">
-                    <div class="test_item fix sm-m-top-30">
-                        <img src="assets/images/google-charts-piechart.png" alt="" />
+                    <div class="test_item fix" style="padding-top: 20px;">
+                        <h2><center><b>Data Jamaah per-Kecamatan</b></center></h2>
+                        <div id="jamaah-donut"></div>
                     </div>
                 </div>
             </div>
@@ -163,4 +169,29 @@
     </div>
 </section><!-- End off test section -->
 
+@endsection
+
+@section('script')
+<!-- Morris.js charts -->
+<script src="{{ url('bower_components/raphael/raphael.min.js') }}"></script>
+<script src="{{ url('bower_components/morris.js/morris.min.js') }}"></script>
+<script>
+new Morris.Donut({
+  // ID of the element in which to draw the chart.
+  element: 'jamaah-donut',
+  // Chart data records -- each entry in this array corresponds to a point on
+  // the chart.
+  data: [
+    @foreach($kecamatan_list as $kecamatan)
+        { label: '{{ $kecamatan[0]->kecamatan }}', value: {{ \App\Jamaah::where('kecamatan', $kecamatan[0]->kecamatan)->count() }} },
+    @endforeach
+  ],
+  colors: ['#265a88', '#419641', '#eb9316', '#c12e2a', '#C0B283', '#DCD0C0', '#F4F4F4', '#373737'],
+  formatter: function (y,data) {
+    return y+' Jamaah'
+  },
+  resize: true,
+  redraw:true
+});
+</script>
 @endsection
