@@ -28,7 +28,7 @@
                 <li><a href="#info">INFO</a></li>
                 <li><a href="#kontak">KONTAK</a></li>
                 @guest
-                    <li style="background-color: yellow;"><a href="{{ route('login') }}">LOGIN ADMIN</a></li>
+                    <li style="background-color: #efdb3e;"><a href="{{ route('login') }}">LOGIN ADMIN</a></li>
                 @else
                     <li class="dropdown">
                         <a href="{{ url('/admin') }}" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false" aria-haspopup="true" v-pre>
@@ -36,6 +36,9 @@
                         </a>
 
                         <ul class="dropdown-menu">
+                            <li>
+                                <a href="{{ url('/admin') }}">Dashboard</a>
+                            </li>
                             <li>
                                 <a href="{{ route('logout') }}"
                                     onclick="event.preventDefault();
@@ -87,21 +90,21 @@
 
 
 <!--Featured Section-->
-<section id="jamaah" class="features">
+<section id="jamaah" class="features" style="background-color: #307a30;">
     <div class="container">
         <div class="row">
             <div class="main_features fix roomy-70">
                 <div class="col-md-9">
                     <div class="features_item sm-m-top-30">
                         <div class="f_item_text">
-                            <p style="font-size: 34px; line-height: 40px;"><b>LIHAT DATA JAMAAH HAJI KABUPATEN SUBANG</b></p>
+                            <p style="font-size: 34px; line-height: 40px; color: white;"><b>LIHAT DATA JAMAAH HAJI KABUPATEN SUBANG</b></p>
                         </div>
                     </div>
                 </div>
                 <div class="col-md-3">
                     <div class="features_item sm-m-top-30">
                         <div class="f_item_text">
-                            <a href="{{ url('lihat-jamaah') }}" class="btn btn-warning" style="background-color: yellow; color: black;">Lihat Data Jamaah</a>
+                            <a href="{{ url('lihat-jamaah') }}" class="btn btn-warning" style="background-color: #efdb3e; color: white;">Lihat Data Jamaah</a>
                         </div>
                     </div>
                 </div>
@@ -136,7 +139,7 @@
                             <input type="text" name="name" class="form-control" placeholder="Nama">
                         </div>
                         <div class="col-md-6">
-                            <input type="text" name="email" class="form-control" placeholder="Email"> 
+                            <input type="email" name="email" class="form-control" placeholder="Email"> 
                         </div>
                         <div class="col-md-12" style="padding-top: 10px;">
                             <input type="text" name="subject" class="form-control" placeholder="Subjek"> 
@@ -145,7 +148,7 @@
                             <textarea name="message" class="form-control" rows="10" placeholder="Message"></textarea> 
                         </div>
                         <div class="col-md-12" style="padding-top: 10px;">
-                            <button type="submit" class="form-control btn-success">KIRIM</button>
+                            <button type="submit" class="form-control btn-success" style="background-color: #efdb3e;"><b>KIRIM</b></button>
                         </div>
                     </form>
                 </div>

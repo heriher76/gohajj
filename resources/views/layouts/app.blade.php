@@ -171,5 +171,7 @@
            var marker = new L.Marker([-6.5566136649762035 , 107.76180535554889], markerOptions);
            marker.addTo(map);
         </script>
+
+        @yield('script')
     </body>
 </html>

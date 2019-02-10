@@ -17,11 +17,14 @@ Auth::routes();
 
 Route::get('/lihat-jamaah', 'PagesController@jamaah');
 
-Route::post('/commented', 'CommentController@store');
+Route::post('/commented', 'CommentController@sendComment');
+
+Route::post('/jamaah/fetch', 'JamaahController@fetch')->name('jamaah.fetch');
 
 Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function() {
 	Route::get('/', 'AdminController@index');
 	Route::resource('/comment', 'CommentController');
 	Route::resource('/users', 'UserAdminController');
 	Route::resource('/jamaah', 'JamaahController');
+	Route::post('/jamaah/import', 'JamaahController@import');
 });

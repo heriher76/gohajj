@@ -20,9 +20,6 @@
         <input type="password" name="password" class="form-control" placeholder="Password"> 
     </div>
     <div class="col-md-12" style="padding-top: 10px;">
-        <input type="password" name="confirm_password" class="form-control" placeholder="Confirm Password"> 
-    </div>
-    <div class="col-md-12" style="padding-top: 10px;">
         <button type="submit" class="form-control btn-success">TAMBAHKAN</button>
     </div>
 </form>

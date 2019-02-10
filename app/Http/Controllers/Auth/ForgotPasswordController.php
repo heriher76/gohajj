@@ -27,6 +27,8 @@ class ForgotPasswordController extends Controller
      */
     public function __construct()
     {
+        abort(404); // force abort
+        
         $this->middleware('guest');
     }
 }

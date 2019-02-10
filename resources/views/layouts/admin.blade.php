@@ -32,12 +32,18 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <!-- Google Font -->
   <link rel="stylesheet"
         href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
-  
+
+  <!-- DataTables CSS -->
+  <link rel="stylesheet" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css">
+
   @yield('style')
 
 </head>
 
 <body class="hold-transition skin-blue sidebar-mini">
+
+@include('sweetalert::alert')
+
 <div class="wrapper">
 
   <!-- Main Header -->
@@ -170,5 +176,10 @@ scratch. This page gets rid of all links and provides the needed markup only.
 <!-- Optionally, you can add Slimscroll and FastClick plugins.
      Both of these plugins are recommended to enhance the
      user experience. -->
+
+<script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.js"></script>
+
+@yield('script')
+
 </body>
 </html>
